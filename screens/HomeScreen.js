@@ -32,9 +32,9 @@ export default function HomeScreen({ navigation }) {
     }
   };
 
-  const handleClear = async () => {
-    await clearData('texto');
-    setSavedText(null);
+  const handleClear = () => {
+    setText(''); 
+    setSavedText(null); 
   };
 
   return (
@@ -76,7 +76,7 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: '#ffb5ff' },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
   input: { width: '80%', padding: 10, borderWidth: 1, borderRadius: 5, marginBottom: 10 },
   button: { width: '80%', padding: 10, backgroundColor: '#e357e0', alignItems: 'center', marginTop: 10 },
