@@ -67,6 +67,10 @@ export default function HomeScreen({ navigation }) {
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Detalhes')}>
         <Text style={styles.buttonText}>Ver Detalhes</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Usuário')}>
+        <Text style={styles.buttonText}>Página do Usuário</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
   input: { width: '80%', padding: 10, borderWidth: 1, borderRadius: 5, marginBottom: 10 },
-  button: { width: '80%', padding: 10, backgroundColor: 'blue', alignItems: 'center', marginTop: 10 },
+  button: { width: '80%', padding: 10, backgroundColor: '#e357e0', alignItems: 'center', marginTop: 10 },
   buttonText: { color: 'white', fontSize: 16 },
   redText: { color: 'red', fontSize: 16, marginBottom: 5 },
   greenText: { color: 'green', fontSize: 16, marginBottom: 10 },

@@ -43,5 +43,5 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
   redText: { color: 'red', fontSize: 16, marginBottom: 5 },
   greenText: { color: 'green', fontSize: 16, marginBottom: 10 },
-  backLink: { fontSize: 16, color: 'blue', marginBottom: 10 },
+  backLink: { fontSize: 16, color: '#e357e0', marginBottom: 10 },
 });
