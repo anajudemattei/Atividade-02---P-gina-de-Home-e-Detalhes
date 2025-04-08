@@ -17,6 +17,7 @@ const clearData = async (key) => {
 export default function HomeScreen({ navigation }) {
   const [text, setText] = useState('');
   const [savedText, setSavedText] = useState(null);
+  const [message, setMessage] = useState(''); // Estado para a mensagem de texto salvo
 
   useEffect(() => {
     getData('texto').then((value) => {
@@ -27,8 +28,14 @@ export default function HomeScreen({ navigation }) {
   const handleSave = async () => {
     if (text.trim() !== '') {
       await saveData('texto', text);
-      setSavedText(text);
-      setText('');
+      setSavedText(text); // Atualiza o texto salvo
+      setText(''); // Limpa o campo de entrada
+      setMessage('Texto salvo com sucesso!'); // Define a mensagem de sucesso
+      setTimeout(() => {
+        setMessage(''); // Remove a mensagem após 3 segundos
+      }, 3000);
+    } else {
+      alert('Por favor, digite algo antes de salvar.'); // Alerta caso o campo esteja vazio
     }
   };
 
@@ -55,6 +62,9 @@ export default function HomeScreen({ navigation }) {
       <Text style={styles.greenText}>
         Texto persistido: {savedText ? savedText : 'Nenhum texto salvo'}
       </Text>
+
+      {/* Exibe a mensagem se existir */}
+      {message !== '' && <Text style={styles.message}>{message}</Text>}
 
       <TouchableOpacity style={styles.button} onPress={handleSave}>
         <Text style={styles.buttonText}>Salvar</Text>
@@ -83,4 +93,5 @@ const styles = StyleSheet.create({
   buttonText: { color: 'white', fontSize: 16 },
   redText: { color: 'red', fontSize: 16, marginBottom: 5 },
   greenText: { color: 'green', fontSize: 16, marginBottom: 10 },
+  message: { color: 'blue', fontSize: 16, marginBottom: 10 }, // Estilo para a mensagem de texto salvo
 });
